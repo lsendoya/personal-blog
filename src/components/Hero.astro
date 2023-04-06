@@ -1,0 +1,115 @@
+<div class="container">
+	<div class="hero">
+		<h2 class="text title">
+			HEY! <span class="text primary">I´m Luis,</span> A <span
+				class="primary">Backend Developer</span
+			>
+		</h2>
+
+		<p class="text">
+			Passionate and enthusiastic developer who loves technology and
+			creating solutions. I am constantly learning new techniques and
+			tools to improve my skills.
+		</p>
+	</div>
+	<figure>
+		<img
+			alt="Luis Sendoya"
+			src="https://res.cloudinary.com/dpmouwnvh/image/upload/v1680649721/self_transparent_vzln68.png"
+		/>
+	</figure>
+</div>
+
+<style>
+	.container {
+		max-width: 1200px;
+		height: auto;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		gap: 4rem;
+		margin: 0rem 5rem;
+	}
+	.hero {
+		max-width: 60%;
+		height: auto;
+		letter-spacing: 0.14rem;
+		background: linear-gradient(rgb(17, 24, 39), rgba(0, 0, 0, 0.247));
+		border-radius: 1rem;
+	}
+	h2 {
+		display: inline-block;
+		font-weight: 400;
+		font-size: 2.8rem;
+		text-align: center;
+		margin: 0rem 1rem 3.5rem 0;
+	}
+	.primary {
+		display: inline-block;
+		font-weight: 800;
+		font-size: 3.3rem;
+	}
+	p {
+		font-weight: 100;
+		font-size: 1.3rem;
+		letter-spacing: 0.01em;
+		text-align: justify;
+		line-height: 2.5rem;
+		padding: 0 2rem 0 2rem;
+	}
+
+	figure {
+		position: relative;
+		width: 16rem;
+		height: 23rem;
+	}
+	img {
+		object-fit: cover;
+		border-radius: 1rem;
+		position: absolute;
+		top: -7rem;
+		display: block;
+	}
+
+	@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap');
+	.text {
+		font-family: 'Open Sans', sans-serif;
+		color: #f7f7f7;
+	}
+	@media screen and (max-width: 768px) {
+		.container {
+			max-width: 50rem;
+			height: auto;
+			align-items: center;
+			gap: 2rem;
+			margin: 0 5rem 5rem 5rem;
+			flex-direction: column;
+		}
+		.hero {
+			order: 1;
+			max-width: 30rem;
+			height: auto;
+			padding: 2rem 1rem;
+		}
+	}
+
+	@media screen and (min-width: 769px) and (max-width: 992px) {
+		.container {
+			width: 100%;
+			gap: 3rem;
+			margin: 0 2rem 5rem 1rem;
+			padding: 1.2rem;
+		}
+
+		h2 {
+			font-size: 2.1rem;
+			letter-spacing: 0.05rem;
+			padding: 0 0.5rem;
+		}
+
+		.primary {
+			font-size: 2.8rem;
+			letter-spacing: 0.07rem;
+		}
+	}
+</style>

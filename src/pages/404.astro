@@ -1,0 +1,41 @@
+---
+import { Cloudinary } from '@cloudinary/url-gen';
+import { fill } from '@cloudinary/url-gen/actions/resize';
+const cld = new Cloudinary({
+	cloud: {
+		cloudName: 'dpmouwnvh',
+	},
+});
+
+const img = cld.image('bubble-gum-error-404_pybiyq');
+const src = img.toURL();
+---
+
+<div class="flex flex-col items-center justify-center h-screen">
+	<img
+		src={src}
+		alt="Not found image resource"
+		class="object-fit w-1/4 h-1/3 md:w-2/4 md:h-2/4 lg:w-3/5 lg:h-3/5"
+	/>
+
+	<div class="flex items-center justify-center flex-1">
+		<div class="max-w-xl px-4 py-4 mx-auto text-center">
+			<h1
+				class="text-4xl font-bold tracking-tight text-gray-900 sm:text-4xl"
+			>
+				We can't find that page.
+			</h1>
+
+			<p class="mt-4 text-gray-500">
+				Try searching again, or return home to start from the beginning.
+			</p>
+
+			<a
+				href="/"
+				class="inline-block px-5 py-3 mt-6 text-sm font-medium text-white bg-gradient-to-r from-slate-900 via-purple-900 to-slate-700 rounded-lg hover:bg-indigo-700 focus:outline-none focus:ring"
+			>
+				Go Back Home
+			</a>
+		</div>
+	</div>
+</div>

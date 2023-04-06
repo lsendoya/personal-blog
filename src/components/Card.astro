@@ -1,63 +1,88 @@
 ---
 export interface Props {
 	title: string;
-	body: string;
-	href: string;
+	desc: string;
+	icon: string;
 }
 
-const { href, title, body } = Astro.props;
+const { title, desc, icon } = Astro.props;
 ---
 
-<li class="link-card">
-	<a href={href}>
-		<h2>
-			{title}
-			<span>&rarr;</span>
-		</h2>
-		<p>
-			{body}
-		</p>
-	</a>
-</li>
+<div class="container">
+	<img src={icon} alt={desc} />
+
+	<h3 class="text title">
+		{title}
+	</h3>
+
+	<p class="text paragraph">
+		{desc}
+	</p>
+</div>
+
 <style>
-	.link-card {
-		list-style: none;
+	.container {
 		display: flex;
-		padding: 0.25rem;
-		background-color: white;
-		background-image: none;
-		background-size: 400%;
-		border-radius: 0.6rem;
-		background-position: 100%;
-		transition: background-position 0.6s cubic-bezier(0.22, 1, 0.36, 1);
-		box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
+		position: relative;
+		flex-direction: column;
+		padding: 1.5rem 1.5rem;
+		gap: 1rem;
+		width: 17.5rem;
+		height: auto;
+		order: 0;
+
+		border-radius: 2rem;
+		background: linear-gradient(
+			rgba(5, 24, 57, 0.859),
+			rgba(15, 18, 23, 0.644),
+			rgba(15, 18, 23, 0.644),
+			rgba(34, 28, 46, 0.247)
+		);
 	}
 
-	.link-card > a {
-		width: 100%;
-		text-decoration: none;
-		line-height: 1.4;
-		padding: 1rem 1.3rem;
-		border-radius: 0.35rem;
-		color: #111;
-		background-color: white;
-		opacity: 0.8;
+	.text {
+		font-family: 'Open Sans', sans-serif;
+		color: #f7f7f7;
+		font-style: normal;
+		display: flex;
+		align-items: center;
+		text-align: center;
 	}
-	h2 {
-		margin: 0;
-		font-size: 1.25rem;
-		transition: color 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+	.paragraph {
+		font-weight: 200;
+		font-size: 1rem;
+		line-height: 1.6rem;
+		text-align: center;
 	}
-	p {
-		margin-top: 0.5rem;
-		margin-bottom: 0;
-		color: #444;
+	.title {
+		font-weight: 800;
+		font-size: 1.5rem;
+		line-height: 2rem;
+		margin: 1rem 0;
+		align-self: center;
 	}
-	.link-card:is(:hover, :focus-within) {
-		background-position: 0;
-		background-image: var(--accent-gradient);
+
+	img {
+		width: 2rem;
+		height: 2rem;
+		position: absolute;
+		top: 0.6rem;
+		left: 0.6rem;
 	}
-	.link-card:is(:hover, :focus-within) h2 {
-		color: rgb(var(--accent));
+	@media screen and (max-width: 768px) {
+		.container {
+			margin: 2rem 0;
+			height: auto;
+		}
+	}
+
+	@media screen and (min-width: 769px) and (max-width: 992px) {
+		.container {
+			margin: 0 1rem;
+			padding: 1rem 0;
+		}
+		.title {
+			padding-top: 0.5rem;
+		}
 	}
 </style>
