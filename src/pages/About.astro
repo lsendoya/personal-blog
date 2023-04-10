@@ -1,1 +1,233 @@
-<p>about</p>
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<script>
+	import Chart from 'chart.js/auto';
+
+	const ctx = document.getElementById('dimensions') as HTMLCanvasElement;
+	new Chart(ctx, {
+		type: 'polarArea',
+		data: {
+			labels: [
+				'JavaScript',
+				'TypeScript',
+				'React',
+				'NodeJS',
+				'NestJS',
+				'GO',
+				'SQL',
+				'NoSQL',
+			],
+			datasets: [
+				{
+					label: 'Skills',
+					data: [4, 4, 3, 4, 4, 4, 4, 4],
+					backgroundColor: [
+						'rgba(255, 99, 132, 0.2)',
+						'rgba(54, 162, 235, 0.2)',
+						'rgba(255, 206, 86, 0.2)',
+						'rgba(75, 192, 192, 0.2)',
+						'rgba(153, 102, 255, 0.2)',
+						'rgba(255, 159, 64, 0.2)',
+						'rgba(255, 99, 132, 0.2)',
+						'rgba(54, 162, 235, 0.2)',
+					],
+					borderColor: [
+						'rgba(255, 99, 132, 1)',
+						'rgba(54, 162, 235, 1)',
+						'rgba(255, 206, 86, 1)',
+						'rgba(75, 192, 192, 1)',
+						'rgba(153, 102, 255, 1)',
+						'rgba(255, 159, 64, 1)',
+						'rgba(255, 99, 132, 1)',
+						'rgba(54, 162, 235, 1)',
+					],
+					borderWidth: 1,
+				},
+			],
+		},
+		options: {
+			scales: {},
+			layout: {
+				padding: 25,
+			},
+			responsive: true,
+		},
+	});
+</script>
+
+<Layout title="about">
+	<div class="container">
+		<div class="biography">
+			<p>
+				I'm Luis Hernando Sendoya and I'm a software developer, I have
+				an innate passion for technology and programming. My year-long
+				experience in the field has allowed me to develop solid skills
+				in programming languages such as Typescript and GO. In addition,
+				I also have experience in web application development, as well
+				as database design and migration.
+			</p>
+			<p>
+				But I am not only focused on my own development; I am also
+				committed to the success of the company and my teammates. I
+				consider myself a collaborative team player and am always
+				willing to work together to achieve the company's goals. I
+				believe in the importance of effective communication and
+				collaboration to achieve successful projects.
+			</p>
+			<p>
+				In short, as a software developer, I offer a unique combination
+				of strong technical skills, a continuous learning approach, and
+				a collaborative attitude to working as a team player. I am
+				excited to continue to grow professionally and be part of an
+				innovative and results-oriented team.
+			</p>
+			<p>
+				During my internship at ZULU TECH, I had the opportunity to
+				demonstrate my skills as a fullstack developer. During my time
+				at the company, I led important initiatives such as the creation
+				of REST APIs in NodeJS and NestJs, the implementation of
+				microservices in GO, and the creation of unit tests for both
+				JavaScript and GO. I also participated in the creation of SQL
+				and NoSQL databases, and contributed in the implementation of
+				components and pages with React and NextJS.
+			</p>
+			<p>
+				Thanks to my experience in these areas, I was able to have a
+				complete view of the modern web application development process.
+				I am sure that my technical skills and my ability to work in a
+				team would be a great contribution to any project I get involved
+				in.
+			</p>
+		</div>
+		<div class="general">
+			<h3>Skills</h3>
+			<div class="skills">
+				<canvas id="dimensions"></canvas><br />
+			</div>
+			<div class="contact">
+				<span>lsendoya@unal.edu.co</span>
+				<span>311-483-7561</span>
+				<span> Medellín, Antioquia</span>
+				<a href="https://www.linkedin.com/in/luisendoya" target="_blank"
+					>www.linkedin.com/in/luisendoya</a
+				>
+			</div>
+		</div>
+	</div>
+</Layout>
+
+<style>
+	.container {
+		display: flex;
+		flex-direction: row;
+		align-items: stretch;
+		max-width: 1200px;
+		height: auto;
+		margin-bottom: 5rem;
+	}
+	.biography {
+		width: 60%;
+		height: auto;
+		display: flex;
+		flex-direction: column;
+		padding: 0 2rem;
+	}
+	p,
+	a {
+		font-size: 1.2rem;
+		color: white;
+		padding: 1rem 1rem;
+		text-align: justify;
+	}
+	.general {
+		width: 40%;
+		height: 200px;
+		color: white;
+		font-size: 5rem;
+	}
+
+	.skills {
+		width: 100%;
+		height: auto;
+		margin-bottom: 7rem;
+	}
+
+	.contact {
+		width: 100%;
+		height: auto;
+		display: flex;
+		flex-direction: column;
+		justify-content: flex-end;
+		align-items: flex-end;
+	}
+	.texto {
+		color: white;
+	}
+	span,
+	a {
+		font-size: 1.1rem;
+		display: block;
+		line-height: 1.9rem;
+		padding: 0;
+	}
+
+	h3 {
+		display: none;
+	}
+
+	@media screen and (max-width: 768px) {
+		.container {
+			flex-direction: column;
+			align-items: center;
+			margin-bottom: 3rem;
+		}
+		.general {
+			margin: 2rem 0;
+			width: 70%;
+			height: auto;
+		}
+		h3 {
+			display: block;
+			font-size: 2.5rem;
+			text-align: center;
+			margin: 1rem 0;
+		}
+		.contact {
+			align-items: center;
+			justify-content: flex-start;
+			background-color: linear-gradient(
+				to right,
+				rgb(229, 231, 235),
+				rgb(156, 163, 175),
+				rgb(75, 85, 99)
+			);
+			margin-bottom: 3rem;
+		}
+		.skills {
+			padding: 0;
+			margin: 0;
+		}
+		span,
+		a {
+			font-size: 1.5rem;
+			line-height: 2.9rem;
+		}
+		p {
+			font-size: 1.5rem;
+			padding: 1rem 0.5rem;
+		}
+	}
+
+	/* 
+	@media screen and (min-width: 769px) and (max-width: 1200px) {
+		
+	}
+
+	@media screen and(max-width: 1200px) {
+	}
+
+	@media screen and(max-width: 1400px) {
+	} */
+</style>
