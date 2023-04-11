@@ -25,8 +25,10 @@ import Layout from '../layouts/Layout.astro';
 <style>
 	.container {
 		display: grid;
+		width: 100%;
 		place-content: center;
 		height: auto;
+		margin-bottom: 4rem;
 	}
 
 	.layout {
@@ -67,5 +69,20 @@ import Layout from '../layouts/Layout.astro';
 	}
 	.message {
 		margin: 0 0 0 2rem;
+	}
+
+	@media screen and (max-width: 768px) {
+		.layout {
+		
+		flex-direction: column;
+		align-items: center;
+	}
+	.message {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
+
+
 	}
 </style>

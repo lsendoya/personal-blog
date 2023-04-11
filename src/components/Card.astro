@@ -27,7 +27,7 @@ const { title, desc, icon } = Astro.props;
 		flex-direction: column;
 		padding: 1.5rem 1.5rem;
 		gap: 1rem;
-		width: 17.5rem;
+		max-width: 20rem;
 		height: auto;
 		order: 0;
 
@@ -71,17 +71,17 @@ const { title, desc, icon } = Astro.props;
 	}
 	@media screen and (max-width: 768px) {
 		.container {
-			width: 60%;
+			width: 80%;
 			margin: 2rem 0;
 			height: auto;
 		}
 
 		p {
-			font-size: 2rem;
-			line-height: 3rem;
+			font-size: 1.2rem;
+			line-height: 1.9rem;
 		}
 		h3 {
-			font-size: 2.5rem;
+			font-size: 2rem;
 			padding-bottom: 1.5rem;
 		}
 	}
