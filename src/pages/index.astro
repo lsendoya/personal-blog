@@ -2,27 +2,14 @@
 import Layout from '../layouts/Layout.astro';
 import Card from '../components/Card.astro';
 import Hero from '../components/Hero.astro';
-import Icons from '../components/Icons.astro';
 ---
 
 <script>
-	import { emotion } from '../utils/animation.js';
-	emotion('.aws', 600, 400, 100, -800, 500, 200, -400, 200);
-	emotion('.docker', -600, -400, -100, 200, -500, 600, 500, -600);
-	emotion('.go', 500, 300, -400, 300, -400, 500, 400, -500);
-	emotion('.js', -500, 200, -600, 400, -300, -400, 300, 400);
-	emotion('.react', 400, 100, 600, 500, -200, 300, 200, 500);
-	emotion('.sql', -400, -100, 400, 600, -100, -200, 100, -600);
-	emotion('.ts', 300, -200, 600, 400, -500, 400, 0, 0);
-
-	setTimeout(() => {
-		const icons = document.querySelector('.icons') as HTMLElement;
-		icons.style.display = 'none';
-	}, 9000);
+	import { frame } from '../utils/animation';
+	frame();
 </script>
 
-<Layout title="Home">
-	<Icons />
+<Layout title="Backend Developer">
 	<Hero />
 	<h2>What I do!</h2>
 	<div class="container">
@@ -51,7 +38,7 @@ import Icons from '../components/Icons.astro';
 		max-width: 1200px;
 		align-items: flex-start;
 		justify-content: space-between;
-		margin: 5rem 5rem 1rem 4rem;
+		margin: 2rem 4rem 1rem 4rem;
 	}
 	h2 {
 		margin: 5rem 5rem 0 4rem;

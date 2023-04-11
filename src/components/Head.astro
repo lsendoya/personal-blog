@@ -1,0 +1,182 @@
+---
+export interface Props {
+	title: string;
+}
+const { title } = Astro.props;
+const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+---
+
+<head>
+	<meta charset="UTF-8" />
+	<title>{title}</title>
+	<meta
+		name="description"
+		content="In this blog, you will meet Luis Hernando Sendoya Serrato, a software developer specialized in Golang, JavaScript, Docker, SQL, TypeScript and React. Discover his skills and most recent projects."
+	/>
+	<meta
+		name="keywords"
+		content="Software Developer, Golang, JavaScript, Docker, SQL, TypeScript, React, Portfolio"
+	/>
+	<meta name="author" content="Luis Hernando Sendoya Serrato" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<link rel="canonical" href={canonicalURL} />
+	<link rel="stylesheet" href="../styles/base.css" />
+	<link rel="icon" type="image/png" href="../../public/icon_main.png" />
+	<!--  close icon-->
+	<link
+		rel="apple-touch-icon"
+		sizes="57x57"
+		href="../../public/apple-icon-57x57.png"
+	/>
+	<link
+		rel="apple-touch-icon"
+		sizes="60x60"
+		href="../../public/apple-icon-60x60.png"
+	/>
+	<link
+		rel="apple-touch-icon"
+		sizes="72x72"
+		href="../../public/apple-icon-72x72.png"
+	/>
+	<link
+		rel="apple-touch-icon"
+		sizes="76x76"
+		href="../../public/apple-icon-76x76.png"
+	/>
+	<link
+		rel="apple-touch-icon"
+		sizes="114x114"
+		href="../../public/apple-icon-114x114.png"
+	/>
+	<link
+		rel="apple-touch-icon"
+		sizes="120x120"
+		href="../../public/apple-icon-120x120.png"
+	/>
+	<link
+		rel="apple-touch-icon"
+		sizes="144x144"
+		href="../../public/apple-icon-144x144.png"
+	/>
+	<link
+		rel="apple-touch-icon"
+		sizes="152x152"
+		href="../../public/apple-icon-152x152.png"
+	/>
+	<link
+		rel="apple-touch-icon"
+		sizes="180x180"
+		href="../../public/apple-icon-180x180.png"
+	/>
+	<link
+		rel="icon"
+		type="image/png"
+		sizes="192x192"
+		href="../../public/android-icon-192x192.png"
+	/>
+	<link
+		rel="icon"
+		type="image/png"
+		sizes="32x32"
+		href="../../public/favicon-32x32.png"
+	/>
+	<link
+		rel="icon"
+		type="image/png"
+		sizes="96x96"
+		href="../../public/favicon-96x96.png"
+	/>
+	<link
+		rel="icon"
+		type="image/png"
+		sizes="16x16"
+		href="../../public/favicon-16x16.png"
+	/>
+	<link rel="manifest" href="../../public/manifest.json" />
+	<!--  menu icon-->
+	<link
+		rel="apple-touch-icon"
+		sizes="57x57"
+		href="../../public/apple-icon-57x57_menu.png"
+	/>
+	<link
+		rel="apple-touch-icon"
+		sizes="60x60"
+		href="../../public/apple-icon-60x60_menu.png"
+	/>
+	<link
+		rel="apple-touch-icon"
+		sizes="72x72"
+		href="../../public/apple-icon-72x72_menu.png"
+	/>
+	<link
+		rel="apple-touch-icon"
+		sizes="76x76"
+		href="../../public/apple-icon-76x76_menu.png"
+	/>
+	<link
+		rel="apple-touch-icon"
+		sizes="114x114"
+		href="../../public/apple-icon-114x114_menu.png"
+	/>
+	<link
+		rel="apple-touch-icon"
+		sizes="120x120"
+		href="../../public/apple-icon-120x120_menu.png"
+	/>
+	<link
+		rel="apple-touch-icon"
+		sizes="144x144"
+		href="../../public/apple-icon-144x144_menu.png"
+	/>
+	<link
+		rel="apple-touch-icon"
+		sizes="152x152"
+		href="../../public/apple-icon-152x152_menu.png"
+	/>
+	<link
+		rel="apple-touch-icon"
+		sizes="180x180"
+		href="../../public/apple-icon-180x180_menu.png"
+	/>
+	<link
+		rel="icon"
+		type="image/png"
+		sizes="192x192"
+		href="../../public/android-icon-192x192_menu.png"
+	/>
+	<link
+		rel="icon"
+		type="image/png"
+		sizes="32x32"
+		href="../../public/favicon-32x32_menu.png"
+	/>
+	<link
+		rel="icon"
+		type="image/png"
+		sizes="96x96"
+		href="../../public/favicon-96x96_menu.png"
+	/>
+	<link
+		rel="icon"
+		type="image/png"
+		sizes="16x16"
+		href="../../public/favicon-16x16_menu.png"
+	/>
+	<link rel="manifest" href="../../public/manifest_menu.json" />
+	<meta name="msapplication-TileColor" content="#ffffff" />
+	<meta name="msapplication-TileImage" content="/ms-icon-144x144.png" />
+	<meta name="theme-color" content="#ffffff" />
+	<meta
+		property="og:title"
+		content="My Portfolio | Software Backend Developer"
+	/>
+	<meta
+		property="og:description"
+		content="Welcome to my personal blog! Here you will find my portfolio, as well as articles and tutorials about backend and frontend development, using technologies like Golang, Javascript, Docker, SQL, Typescript and React. Don't miss any of my projects and stay up to date with the latest trends in software development!"
+	/>
+
+	<meta property="og:type" content="website" />
+	<meta property="og:url" content={canonicalURL} />
+	<meta property="og:image" content="../../public/og_image.png" />
+</head>

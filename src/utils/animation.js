@@ -1,20 +1,35 @@
-import { animate } from 'motion';
+import confetti from 'canvas-confetti';
+const duration = 5 * 1000,
+	animationEnd = Date.now() + duration;
 
-export const emotion = (element, p1, p2, p3, p4, p5, p6, p7, p8) => {
-    animate(
-        element, {
-            transform: [
-                `translateX(${p1}px)`,
-                `translateY(${p2}px)`,
-                `translateX(${p3}px)`,
-                `translateY(${p4}px)`,
-                `translateX(${p5}px)`,
-                `translateY(${p6}px)`,
-                `translateX(${p7}px)`,
-                `translateY(${p8}px)`,
-                'none',
-                'translateY(0px)',
-            ],
-        }, { easing: ['ease-out'], duration: 10 }
-    );
-};
+let skew = 1;
+
+function randomInRange(min, max) {
+	return Math.random() * (max - min) + min;
+}
+
+export function frame() {
+	const timeLeft = animationEnd - Date.now(),
+		ticks = Math.max(200, 500 * (timeLeft / duration));
+
+	skew = Math.max(0.8, skew - 0.001);
+
+	confetti({
+		particleCount: 1,
+		startVelocity: 0,
+		ticks: ticks,
+		origin: {
+			x: Math.random(),
+			y: Math.random() * skew - 0.2,
+		},
+		colors: ['#144272'],
+		shapes: ['starts'],
+		gravity: randomInRange(0.4, 0.6),
+		scalar: randomInRange(0.4, 1),
+		drift: randomInRange(-0.4, 0.4),
+	});
+
+	if (timeLeft > 0) {
+		requestAnimationFrame(frame);
+	}
+}

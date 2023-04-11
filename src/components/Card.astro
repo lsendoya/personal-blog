@@ -11,11 +11,11 @@ const { title, desc, icon } = Astro.props;
 <div class="container">
 	<img src={icon} alt={desc} />
 
-	<h3 class="text title">
+	<h3 class="text">
 		{title}
 	</h3>
 
-	<p class="text paragraph">
+	<p class="text">
 		{desc}
 	</p>
 </div>
@@ -48,13 +48,13 @@ const { title, desc, icon } = Astro.props;
 		align-items: center;
 		text-align: center;
 	}
-	.paragraph {
+	p {
 		font-weight: 200;
 		font-size: 1rem;
 		line-height: 1.6rem;
 		text-align: center;
 	}
-	.title {
+	h3 {
 		font-weight: 800;
 		font-size: 1.5rem;
 		line-height: 2rem;
@@ -71,8 +71,18 @@ const { title, desc, icon } = Astro.props;
 	}
 	@media screen and (max-width: 768px) {
 		.container {
+			width: 60%;
 			margin: 2rem 0;
 			height: auto;
+		}
+
+		p {
+			font-size: 2rem;
+			line-height: 3rem;
+		}
+		h3 {
+			font-size: 2.5rem;
+			padding-bottom: 1.5rem;
 		}
 	}
 
@@ -81,7 +91,7 @@ const { title, desc, icon } = Astro.props;
 			margin: 0 1rem;
 			padding: 1rem 0;
 		}
-		.title {
+		h3 {
 			padding-top: 0.5rem;
 		}
 	}

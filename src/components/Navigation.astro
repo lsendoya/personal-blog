@@ -1,105 +1,113 @@
-<div class="container">
-	<a class="text logo" href="/">LS</a>
-	<nav aria-label="Site Nav" class="text nav">
-		<a class="text" href="/About">ABOUT</a>
-		<a class="text" href="">WORK</a>
-		<a class="text" href="/Contact">CONTACT</a>
-	</nav>
-	<div class="cta">
-		<a href="#">HIRE ME!</a>
+<script>
+	const burgerMenu = document.querySelector('.burger-menu') as HTMLElement;
+	const menuItems = document.querySelector('.menu-items') as HTMLElement;
+	const closeMenu = document.querySelector('.close-menu') as HTMLElement;
+
+	burgerMenu.addEventListener('click', () => {
+		menuItems.style.display = 'block';
+		closeMenu.style.display = 'block';
+		burgerMenu.style.display = 'none';
+	});
+
+	closeMenu.addEventListener('click', () => {
+		menuItems.style.display = 'none';
+		closeMenu.style.display = 'none';
+		burgerMenu.style.display = 'block';
+	});
+</script>
+
+<nav>
+	<div class="brand">
+		<a class="text logo" href="/">LS</a>
+		<div class="burger-menu">
+			<img src="../../public/icons_menu.png" alt="Open menu" />
+		</div>
+		<div class="close-menu">
+			<img src="../../public/icons_close.png" alt="Close menu" />
+		</div>
 	</div>
-</div>
+	<ul class="menu-items">
+		<li><a href="/About">About</a></li>
+		<li><a href="/Work">Work</a></li>
+	</ul>
+</nav>
 
 <style>
-	.container {
-		max-width: 1000px;
-		display: flex;
-		justify-content: space-between;
-		align-items: baseline;
-		margin: 3rem 5rem 0 5rem;
-		height: 10rem;
-	}
-	.nav {
+	nav {
 		display: flex;
 		width: 100%;
-		height: 8rem;
+		height: auto;
 		justify-content: space-between;
-		align-items: baseline;
-		padding: 0.5rem 5.5rem 0.5rem 7rem;
-		gap: 5px;
-		flex-shrink: 2;
+		align-items: center;
+		margin: 1rem 3rem 1rem 3rem;
+		padding: 1rem;
+		color: #f7f7f7;
 	}
+
 	.logo {
 		font-weight: 900;
 		font-size: 3rem;
 		text-align: center;
 	}
-	.nav a {
-		display: block;
-		width: 100%;
-		height: 4rem;
-		font-weight: 900;
-		font-size: 1.6rem;
-		line-height: 2rem;
-		align-items: center;
-		text-align: center;
+
+	li {
+		padding: 0 2rem;
 	}
-	.cta {
-		width: 5rem;
-		height: 2.5rem;
-		background: #ffffff;
-		border-radius: 4.3rem;
+	a {
+		font-size: 2.5rem;
+		font-weight: 500;
+		cursor: pointer;
 	}
-	.cta a {
-		display: block;
-		width: 2rem;
-		height: 100%;
-		font-weight: 900;
-		font-size: 1rem;
+	.menu-items {
 		display: flex;
-		justify-self: center;
-		align-items: center;
-		text-align: center;
-		padding-left: 0.8rem;
+		list-style: none;
 	}
 
-	@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap');
-	.text {
-		font-family: 'Open Sans', sans-serif;
-		color: #f7f7f7;
+	.burger-menu,
+	.close-menu {
+		color: #fff;
+		width: 40px;
+		padding: 0;
+		display: none;
 	}
-
-	@media screen and (max-width: 576px) {
-		.cta {
-			width: 5%;
-			height: auto;
-			border-radius: 0.5rem;
-		}
-		.cta a {
-			text-align: center;
-			font-weight: bold;
-			padding-inline-start: 0.5rem;
-			font-size: 0.6rem;
-		}
-	}
-
 	@media screen and (max-width: 768px) {
-		.container {
+		nav {
 			justify-content: space-between;
 			align-items: center;
-			margin: 0.5rem 2rem 0 2rem;
+			flex-direction: column;
 		}
-		.nav {
+		.brand {
+			width: 100%;
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+		}
+
+		.burger-menu {
+			display: block;
+		}
+
+		.menu-items {
+			display: none;
+			width: 100%;
+		}
+		.menu-items li {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			margin-right: 0;
+			margin-bottom: 10px;
+			width: 100%;
+			padding: 0.8rem 0;
+		}
+
+		.close-menu {
 			display: none;
 		}
-		.cta {
-			width: 11%;
-			height: auto;
-			padding: 0.1rem 0.3rem;
-			border-radius: 0.5rem;
-		}
-		.cta a {
-			text-align: center;
+
+		li > a {
+			font-size: 1.9rem;
+			padding: 0 1rem;
 		}
 	}
 
@@ -110,16 +118,5 @@
 			padding: 0 1rem;
 			height: auto;
 		}
-		.cta {
-			width: 6rem;
-			border-radius: 1rem;
-			padding: 0 0.8rem;
-		}
-	}
-
-	@media screen and(max-width: 1200px) {
-	}
-
-	@media screen and(max-width: 1400px) {
 	}
 </style>

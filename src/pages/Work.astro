@@ -1,0 +1,71 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="My work">
+	<div class="container">
+		<div class="layout">
+			<img
+				src="../../public/building.png"
+				alt=""
+				width="250"
+				height="250"
+			/>
+			<div class="message">
+				<h1>Uh-oh!</h1>
+
+				<p>This page is under construction.</p>
+
+				<a href="/"> Go Back Home</a>
+			</div>
+		</div>
+	</div>
+</Layout>
+
+<style>
+	.container {
+		display: grid;
+		place-content: center;
+		height: auto;
+	}
+
+	.layout {
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		gap: 3rem;
+	}
+	h1 {
+		margin-top: 1.5rem;
+		font-size: 3rem;
+		line-height: 2rem;
+		font-weight: 700;
+		letter-spacing: -0.025em;
+		color: #f7f7f7;
+	}
+	p {
+		margin-top: 1rem;
+		font-size: 1.2rem;
+		--tw-text-opacity: 1;
+		color: rgb(107 114 128 / var(--tw-text-opacity));
+	}
+	a {
+		display: inline-block;
+		padding: 0.75rem 1.25rem 0.75rem 1.25rem;
+		margin-top: 1.5rem;
+		font-weight: 500;
+		background: gray;
+		border-radius: 0.5rem;
+	}
+	a:hover {
+		--tw-bg-opacity: 1;
+		background-color: rgb(67 56 202 / var(--tw-bg-opacity));
+	}
+	a:focus {
+		outline: 2px solid transparent;
+		outline-offset: 2px;
+	}
+	.message {
+		margin: 0 0 0 2rem;
+	}
+</style>
