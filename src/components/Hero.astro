@@ -59,6 +59,7 @@
 		text-align: justify;
 		line-height: 2.5rem;
 		padding: 0 2rem 0 2rem;
+		transition: transform 0.3s ease-out
 	}
 
 	figure {
@@ -72,6 +73,13 @@
 		position: absolute;
 		top: -7rem;
 		display: block;
+		transition: transform 0.5s ease-out
+	}
+	p:hover{
+		transform: scale3d(1,1.1,1.2);
+	}
+	img:hover{
+		transform: skew(1.5deg,1.5deg)
 	}
 
 	@media screen and (max-width: 768px) {

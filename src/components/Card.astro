@@ -30,7 +30,7 @@ const { title, desc, icon } = Astro.props;
 		max-width: 20rem;
 		height: auto;
 		order: 0;
-
+		transition: transform 0.4s ease-out;
 		border-radius: 2rem;
 		background: linear-gradient(
 			rgba(5, 24, 57, 0.859),
@@ -68,6 +68,15 @@ const { title, desc, icon } = Astro.props;
 		position: absolute;
 		top: 0.6rem;
 		left: 0.6rem;
+		transition: transform 0.3s ease-out;
+		transform-origin: right top;
+	}
+	img:hover{
+		transform: rotate(-25deg);
+	}
+
+	.container:hover{
+		transform: scale(1.15,1.15);
 	}
 	@media screen and (max-width: 768px) {
 		.container {

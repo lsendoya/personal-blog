@@ -20,10 +20,16 @@
 	<div class="brand">
 		<a class="text logo" href="/">LS</a>
 		<div class="burger-menu">
-			<img src="https://res.cloudinary.com/dpmouwnvh/image/upload/v1681246091/icons_menu_qdihvy.png" alt="Open menu" />
+			<img
+				src="https://res.cloudinary.com/dpmouwnvh/image/upload/v1681246091/icons_menu_qdihvy.png"
+				alt="Open menu"
+			/>
 		</div>
 		<div class="close-menu">
-			<img src="https://res.cloudinary.com/dpmouwnvh/image/upload/v1681246084/icons_close_xfdzpf.png" alt="Close menu" />
+			<img
+				src="https://res.cloudinary.com/dpmouwnvh/image/upload/v1681246084/icons_close_xfdzpf.png"
+				alt="Close menu"
+			/>
 		</div>
 	</div>
 	<ul class="menu-items">
@@ -51,12 +57,15 @@
 	}
 
 	li {
-		padding: 0 2rem;
+		padding: 0;
+		margin: 0 2rem;
 	}
 	a {
+		display: inline-block;
 		font-size: 2.5rem;
 		font-weight: 500;
 		cursor: pointer;
+		transition: transform 0.4s ease-out
 	}
 	.menu-items {
 		display: flex;
@@ -70,6 +79,19 @@
 		padding: 0;
 		display: none;
 	}
+	a:hover {
+		transform: scale3d(0.9,0.8,0.8);
+	}
+
+	@keyframes reset {
+		0% {
+			transform: scale3d(0.77, 0.83, 0.91);
+		}
+		100% {
+			transform: scale3d(1, 1, 1);
+		}
+	}
+
 	@media screen and (max-width: 768px) {
 		nav {
 			justify-content: space-between;

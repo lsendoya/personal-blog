@@ -160,6 +160,7 @@ import Layout from '../layouts/Layout.astro';
 		flex-direction: column;
 		justify-content: flex-end;
 		align-items: flex-end;
+		transition: transform 0.3s ease-out;
 	}
 	.texto {
 		color: white;
@@ -174,6 +175,15 @@ import Layout from '../layouts/Layout.astro';
 
 	h3 {
 		display: none;
+	}
+	p {
+		transition: transform 0.3s ease-out;
+	}
+	p:hover{
+			transform: scale(1.05,1.05);
+		}
+	.contact:hover {
+		transform: scale(1.06, 1.06);
 	}
 
 	@media screen and (max-width: 768px) {
@@ -218,6 +228,7 @@ import Layout from '../layouts/Layout.astro';
 		p {
 			font-size: 1.1rem;
 			padding: 1rem 0.5rem;
-		}
+					}
+		
 	}
 </style>
